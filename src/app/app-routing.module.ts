@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const appRoutes: Routes = [];
+import { ErrorComponent } from './shared/error/error.component';
+
+const appRoutes: Routes = [
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    //{ path: '**', component: ErrorComponent },
+];
 
 @NgModule({
     imports: [
