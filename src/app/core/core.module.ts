@@ -4,10 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule} from '@angular/router';
 
 import { AuthGuardService } from './auth-guard.service';
+import { AuthenticationService } from './authentication.service';
 
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
-import { AuthenticationService } from './authentication.service';
 
 @NgModule({
   imports: [

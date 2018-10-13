@@ -2,34 +2,39 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, throwError} from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 import { AuthorService } from '../shared/author/author.service';
 
 import { Author } from '../shared/author/author.model';
 import { Token } from './token.model';
+import { environment } from '../../environments/environment';
 
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthenticationService {
 
-  private url: string = 'http://localhost:3000/authenticated';
+  private url: string = environment.url + 'authenticated';
+
   token: Token = null;
 
   constructor(
     private httpClient: HttpClient,
     private router: Router,
     private authorService: AuthorService
-  ) { }
+  ) {
+    if (localStorage.getItem('token') != null) {
+      const tokenLS = JSON.parse(localStorage.getItem('token'));
+      this.token = new Token(tokenLS['_key'], tokenLS['_idAuthor']);
+    }
+  }
 
   login(idAuthor: string): void {
     this.authorService.getAuthor(idAuthor).subscribe(author => {
       const tokenGenerated = this.generateToken();
       this.saveSession(tokenGenerated, author.id).subscribe(response => {
         this.token = new Token(response['id'], response['author']);
+        localStorage.setItem('token', JSON.stringify(this.token));
         this.router.navigate(['/dashboard']);
       });
     });
@@ -38,6 +43,7 @@ export class AuthenticationService {
   logout(): void {
     this.deleteSession().subscribe(response => {
       this.token = null;
+      localStorage.removeItem('token');
       this.router.navigate(['/login']);
     });
   }
@@ -50,7 +56,9 @@ export class AuthenticationService {
     for (let i = 0; i < 5; i++) {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
+
     text += date;
+
     return text;
   }
 
@@ -74,5 +82,4 @@ export class AuthenticationService {
     console.error(errMsg);
     return throwError(errMsg);
   }
-
 }

@@ -6,7 +6,6 @@ import { TwimpService } from '../shared/twimp/twimp.service';
 import { AuthenticationService } from '../core/authentication.service';
 
 import { Twimp } from '../shared/twimp/twimp.model';
-import { Author } from '../shared/author/author.model';
 
 @Component({
   selector: 'tweempus-dashboard',

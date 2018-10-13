@@ -9,6 +9,11 @@
       "id": "2",
       "fullName": "David Teitelbaum",
       "image": "https://randomuser.me/api/portraits/men/82.jpg"
+    },
+    {
+      "id": "david",
+      "fullName": "David West",
+      "image": "https://randomuser.me/api/portraits/men/60.jpg"
     }
   ],
   "authenticated": [],
@@ -26,6 +31,20 @@
       "by": "David Teitelbaum",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam efficitur sodales libero, sit amet posuere arcu consectetur ut. Nam volutpat ligula ac nunc consectetur vestibulum.",
       "timestamp": "12-10-2016"
+    },
+    {
+      "id": "2",
+      "author": "david",
+      "by": "Author",
+      "content": "prueba prueba",
+      "timestamp": "12-1-2017"
+    },
+    {
+      "id": "3",
+      "author": "1",
+      "by": "Author",
+      "content": "hola amigo",
+      "timestamp": "13-10-2018"
     }
   ],
   "author-favorites": [
@@ -40,20 +59,10 @@
       "twimps": [
         "Mx5Cf1483389903318"
       ]
-    }
-  ],
-  "author-twimps": [
-    {
-      "id": "1",
-      "twimps": [
-        "Mx5Cf1483389903318"
-      ]
     },
     {
-      "id": "2",
-      "twimps": [
-        "T4qdo1483390015454"
-      ]
+      "id": "david",
+      "twimps": []
     }
   ]
 }
