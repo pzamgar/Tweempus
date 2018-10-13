@@ -33,6 +33,7 @@ export class CreateTwimpComponent implements OnInit {
       const twimpDate: string = new Date().toLocaleDateString().replace(/\//g, '-');
       const author: Author = new Author(this.authService.token.idAuthor);
       const twimp: Twimp = new Twimp(response.length.toString(), '', author, form.value.content, twimpDate);
+      console.log('createTwimp: ' + twimp);
       this.twimpService.setTwimp(twimp).subscribe(
         response => this.router.navigate(['/dashboard'])
       );

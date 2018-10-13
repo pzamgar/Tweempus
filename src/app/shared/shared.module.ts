@@ -9,13 +9,14 @@ import { TwimpCardComponent } from './twimp/twimp-card/twimp-card.component';
 import { TwimpListComponent } from './twimp/twimp-list/twimp-list.component';
 import { AuthorCardComponent } from './author/author-card/author-card.component';
 import { ErrorComponent } from './error/error.component';
+import { SortByPipe } from './sort-by.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule
   ],
-  declarations: [TwimpCardComponent, TwimpListComponent, AuthorCardComponent, ErrorComponent],
+  declarations: [TwimpCardComponent, TwimpListComponent, AuthorCardComponent, ErrorComponent, SortByPipe],
   providers: [AuthorService, TwimpService],
   exports: [TwimpCardComponent, TwimpListComponent, AuthorCardComponent, RouterModule]
 })
