@@ -16,7 +16,7 @@ export class AuthorService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAuhtor(id: string): Observable<Author> {
+  getAuthor(id: string): Observable<Author> {
     let author: Author = null;
     return this.httpClient.get<Author>(this.url + '/' + id).pipe(
       map(dbAuthor => {
