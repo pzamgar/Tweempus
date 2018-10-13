@@ -11,16 +11,7 @@
       "image": "https://randomuser.me/api/portraits/men/82.jpg"
     }
   ],
-  "authenticated": [
-    {
-      "id": "WEkn71539434442135",
-      "author": "1"
-    },
-    {
-      "id": "4Rgtf1539434462754",
-      "author": "2"
-    }
-  ],
+  "authenticated": [],
   "twimps": [
     {
       "id": "Mx5Cf1483389903318",
