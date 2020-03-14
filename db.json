@@ -14,6 +14,11 @@
       "id": "david",
       "fullName": "David West",
       "image": "https://randomuser.me/api/portraits/men/60.jpg"
+    },
+    {
+      "id": "hola",
+      "fullName": "hola",
+      "image": "1"
     }
   ],
   "authenticated": [],
@@ -45,6 +50,13 @@
       "by": "Author",
       "content": "hola amigo",
       "timestamp": "13-10-2018"
+    },
+    {
+      "id": "4",
+      "author": "hola",
+      "by": "Author",
+      "content": "mascara",
+      "timestamp": "14-3-2020"
     }
   ],
   "author-favorites": [
@@ -62,6 +74,10 @@
     },
     {
       "id": "david",
+      "twimps": []
+    },
+    {
+      "id": "hola",
       "twimps": []
     }
   ]
